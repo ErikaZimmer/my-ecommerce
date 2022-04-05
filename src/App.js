@@ -1,9 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBarApp from './Components/NavBar';
-import ProductsSection from './Components/ProductsSection';
-
+import NavBarApp from './Components/NavBar/NavBar';
+import ProductsSection from './Components/ProductsSection/ProductsSection';
 
 
 function App() {
