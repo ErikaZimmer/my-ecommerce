@@ -11,7 +11,7 @@ function CartWidget(){
     return ( 
         <>
             <Button variant="light" onClick={handleShow}>
-                <img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/40/000000/external-cart-supermarket-flatart-icons-lineal-color-flatarticons.png"/>
+                <img src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/40/000000/external-cart-supermarket-flatart-icons-lineal-color-flatarticons.png" alt="Icono de carrito"/>
             </Button>
 
             <Offcanvas show={show} onHide={handleClose} placement='end'>

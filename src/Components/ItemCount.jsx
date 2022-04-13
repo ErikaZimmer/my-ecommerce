@@ -1,17 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-function ItemCount(props){
+function ItemCount(props, onAdd){
     const [count, setCount] = useState(props.initial);
-    const [add, setAddButton] = useState(false);
-    const [subs, setSubsButton] = useState(false);
-    const [buyButton,setBuyButton] = useState("");
-    const [carrito, setCarrito] = useState();
-
-    function onAdd(){
-        setCarrito(count);
-        console.log(carrito);
-    }
 
     function addItem(){
         setCount(count+1);
@@ -28,7 +19,7 @@ function ItemCount(props){
                 <p>{count}</p>
                 <Button variant="secondary" onClick={addItem} disabled={(count === props.stock || props.stock === 0)?true:false}>+</Button>
             </div>
-            <Button variant="primary" disabled={(props.stock === 0)?true:false} onClick={onAdd}>Comprar</Button>
+            <Button variant="primary" disabled={(props.stock === 0)?true:false} onClick={() => onAdd({count})}>Comprar</Button>
         </>
     )
 }
