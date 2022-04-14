@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-function ItemCount(props, onAdd){
+function ItemCount(props){
     const [count, setCount] = useState(props.initial);
 
     function addItem(){
@@ -19,7 +19,7 @@ function ItemCount(props, onAdd){
                 <p>{count}</p>
                 <Button variant="secondary" onClick={addItem} disabled={(count === props.stock || props.stock === 0)?true:false}>+</Button>
             </div>
-            <Button variant="primary" disabled={(props.stock === 0)?true:false} onClick={() => onAdd({count})}>Comprar</Button>
+            <Button variant="primary" onClick={() => props.onAdd({count})} disabled={(props.stock === 0)?true:false}>Comprar</Button>
         </>
     )
 }
