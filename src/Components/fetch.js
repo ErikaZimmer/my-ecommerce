@@ -1,11 +1,10 @@
 let isOk = true;
 
-const CustomFetch = (time, task, idCategory) => {
+const Fetch = (time, task) => {
     return new Promise((resolve, reject) => {
-        const categorySearch = task.filter(item => item.category === idCategory);
         setTimeout(() => {
            if (isOk){
-               resolve(categorySearch);
+               resolve(task);
            } else {
                reject('Error');
            }
@@ -13,4 +12,4 @@ const CustomFetch = (time, task, idCategory) => {
     })
 }
 
-export default CustomFetch; 
+export default Fetch; 

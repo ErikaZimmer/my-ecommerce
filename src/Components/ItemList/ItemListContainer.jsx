@@ -3,32 +3,46 @@ import CustomFetch from '../customFetch';
 import productsList from "../productsList";
 import ItemList from './ItemList';
 import Item from "../Item";
+import { useParams } from 'react-router-dom';
+import { Spinner } from 'react-bootstrap';
+import BreadcrumbInfo from '../BreadcrumbInfo';
 
 
-function ItemListContainer() {
+function ItemListContainer(props) {
+
+    const {idCategory} = useParams();
     const [element, setElement] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        CustomFetch(1000, productsList)
+        CustomFetch(500, productsList, idCategory)
         .then(resultado => setElement(resultado))
-        .catch(error => console.log(error));
-    }, [element])
+        .catch(error => console.log(error))
+        .finally(()=> {setLoading(false)});
+    }, [idCategory])
 
-    const produtsBestSellers = element.filter(item => item.topSeller === true).map((item) => 
-        <Item key={item.id} name={item.name} price={item.price} img={item.img} stock={item.stock} />
-    )
-    const produtsFavorite = element.filter(item => item.favorite === true).map((item) => 
-        <Item key={item.id} name={item.name} price={item.price} img={item.img} stock={item.stock} />
+    console.log(idCategory);
+
+    const products = element.map((item) => 
+        <Item item={item} />
     )
 
   return (
       <>
-        <ItemList title="Más Vendidos" products={produtsBestSellers}/>
-        <ItemList title="Nuestros favoritos" products={produtsFavorite}/>  
+        { loading ? (
+          <Spinner animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        ) : (
+          <>
+            <BreadcrumbInfo/>
+            <ItemList title={idCategory} products={products}/>
+          </>
+        )
+        }
       </>
     
   )
 }
-
 
 export default ItemListContainer;
