@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function ItemCount(props){
     const [count, setCount] = useState(props.initial);
@@ -19,7 +20,9 @@ function ItemCount(props){
                 <p>{count}</p>
                 <Button variant="secondary" onClick={addItem} disabled={(count === props.stock || props.stock === 0)?true:false}>+</Button>
             </div>
-            <Button variant="primary" onClick={() => props.onAdd({count})} disabled={(props.stock === 0)?true:false}>Comprar</Button>
+            <Link to="/cart" >
+                <Button variant="primary" onClick={() => props.onAdd({count})} disabled={(props.stock === 0)?true:false}>Comprar</Button>
+            </Link>
         </>
     )
 }
