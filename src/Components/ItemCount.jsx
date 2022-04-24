@@ -27,8 +27,7 @@ function ItemCount(props){
             </Button>
             <Link to="/cart" >
                 <Button 
-                    variant="primary" 
-                    display={false}>
+                    variant="primary">
                         Comprar
                 </Button>
             </Link>
