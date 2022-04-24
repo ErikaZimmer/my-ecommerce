@@ -5,14 +5,15 @@ import ItemListContainer from './Components/ItemList/ItemListContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeSection from './Components/Pages/HomeSection';
 import AboutSection from './Components/Pages/AboutSection';
+import Cart from './Components/Cart';
 import NotFound from './Components/Pages/NotFound';
 import ItemDetailContainer from './Components/ItemDetail/ItemDetailContainer';
-
+import CartContextProvider from './Components/CartContext';
 
 function App() {
 
   return (
-    <div className="App">
+    <CartContextProvider className="App">
       <BrowserRouter>
         <NavBar />  
         <div className='sectionContainer'>  
@@ -21,11 +22,12 @@ function App() {
             <Route exact path='/about' element={<AboutSection/>} />
             <Route exact path='/categoria/:idCategory' element={<ItemListContainer/>} />
             <Route exact path='/producto/:idItem' element={<ItemDetailContainer/>} />
+            <Route exact path='/cart' element={<Cart />} />
             <Route path="*" element={<NotFound/>} />
           </Routes>
         </div>
       </BrowserRouter>
-    </div>
+    </CartContextProvider>
   );
 }
 
