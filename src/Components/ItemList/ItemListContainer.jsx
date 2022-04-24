@@ -24,7 +24,7 @@ function ItemListContainer(props) {
     console.log(idCategory);
 
     const products = element.map((item) => 
-        <Item item={item} />
+        <Item item={item} key={item.id}/>
     )
 
   return (

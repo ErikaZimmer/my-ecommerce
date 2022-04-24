@@ -9,8 +9,6 @@ function ItemDetailContainer(){
     const {idItem} = useParams();
     const [product, setProduct] = useState({});
 
-    console.log("Producto id:"+idItem);
-
     useEffect(() => {
         SearchProduct(1000, productsList, idItem)
         .then(resultado => setProduct(resultado))

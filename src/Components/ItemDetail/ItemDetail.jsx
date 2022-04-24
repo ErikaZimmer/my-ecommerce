@@ -1,11 +1,12 @@
 import React from "react";
-import ItemCount from "../ItemCount";
 import "./ItemDetail.css";
+import ItemCount from "../ItemCount";
 
 function ItemDetail(product){
+
     return (
       <>
-        <div className="detailContainer">
+        <div className="detailContainer" >
           <img
             className="d-block detailImage"
             src={product.product.img}
@@ -14,7 +15,7 @@ function ItemDetail(product){
           <div>
             <h3>{product.product.name}</h3>
             <p className="detailPrice"> $ {product.product.price}</p>
-            <ItemCount/>
+            <ItemCount product={product}/>
           </div>
         </div>
       </>
