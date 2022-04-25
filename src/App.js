@@ -8,7 +8,7 @@ import AboutSection from './Components/Pages/AboutSection';
 import Cart from './Components/Cart';
 import NotFound from './Components/Pages/NotFound';
 import ItemDetailContainer from './Components/ItemDetail/ItemDetailContainer';
-
+//import CartContextProvider from './Components/CartContext';
 
 function App() {
 
