@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import CustomFetch from '../customFetch';
-import productsList from "../productsList";
-import ItemList from './ItemList';
-import Item from "../Item";
 import { useParams } from 'react-router-dom';
 import { Spinner } from 'react-bootstrap';
+import CustomFetch from '../../Utils/customFetch';
+import productsList from "../../Utils/productsList";
+import ItemList from './ItemList';
+import Item from "../Item";
 import BreadcrumbInfo from '../BreadcrumbInfo';
 
 

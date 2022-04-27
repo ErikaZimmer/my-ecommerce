@@ -1,8 +1,9 @@
-import React, { useState ,  useEffect} from "react";
+import React, { useState ,  useEffect, useContext} from "react";
 import { useParams } from "react-router-dom";
-import productsList from "../productsList";
-import SearchProduct from '../searchProduct';
+import productsList from "../../Utils/productsList";
+import SearchProduct from '../../Utils/searchProduct';
 import ItemDetail from './ItemDetail' 
+import { CartContext } from "../../Utils/CartContext";
 
 function ItemDetailContainer(){
 
@@ -15,8 +16,17 @@ function ItemDetailContainer(){
         .catch(error => console.log(error));
     }, [idItem])
 
+    const [active, setActive] = useState(false);
+
+    const { addToCart } = useContext(CartContext);
+
+    function buying(id, cant){
+        setActive(true);
+        addToCart(id, cant);
+    }
+
     return(
-        <ItemDetail product={product}/> 
+        <ItemDetail product={product} buying={buying} active={active}/> 
     )
 
 }

@@ -1,17 +1,21 @@
 import React, { useState, useContext } from "react";
-import { CartContext } from "./CartContext";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { CartContext } from "../Utils/CartContext";
 
 function ItemCount(props){
     const [count, setCount] = useState(1);
 
-    const {addToCart} = useContext(CartContext);
+    const { addItemCart } = useContext(CartContext);
 
     function addItem(){setCount(count+1);}
     function subsItem(){setCount(count-1);}
 
-    console.log("este numero "+props.product.product.stock)
+    function buyItem(id, cantidad) {
+        setCount(1);
+        console.log(id, cantidad);
+        addItemCart(id, cantidad);
+    }
+
     return(
         <>
             <div className="itemCountSection"> 
@@ -21,16 +25,11 @@ function ItemCount(props){
             </div>
             <Button 
                 variant="primary" 
-                onClick={() => addToCart({count})} 
+                onClick={() => buyItem(props.product.product.id, count)} 
                 disabled={(props.product.product.stock === 0)?true:false}>
                     Agregar al carrito
             </Button>
-            <Link to="/cart" >
-                <Button 
-                    variant="primary">
-                        Comprar
-                </Button>
-            </Link>
+
         </>
     )
 }

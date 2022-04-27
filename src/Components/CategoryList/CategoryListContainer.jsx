@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Fetch from '../fetch';
-import CategoryList from "./CategoryList";
+import Fetch from '../../Utils/fetch';
 import CategoryItem from '../CategoryItem';
-import categorysList from "./categorysList";
+import CategoryList from "./CategoryList";
+import categorysList from "../../Utils/categorysList";
 import { Spinner } from 'react-bootstrap';
 
 function CategoryListContainer(props) {
