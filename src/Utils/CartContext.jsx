@@ -1,27 +1,49 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
 function CartContextProvider ( {children} ) {
 
-    const [carrito, setCarrtio] = useState([]);
+    let [carrito, setCarrtio] = useState([]);
+    let [compraTotal, setCompraTotal] = useState(0);
 
     function addItemCart (id, cantidad) {
-        setCarrtio(...carrito, {id, cantidad});
-        setActive(true) ;
+        let indexArr = isInList(id); 
+        if (indexArr<0){
+            setCarrtio([...carrito, {id, cantidad}]);
+        } else {
+            carrito[indexArr].cantidad += cantidad;
+        } 
     }
-    console.log({carrito}); 
-    const removeItemCart = (item) => console.log(carrito);
-    const removeProduct = (item) => console.log(item);
+
+    function removeProduct (idProd){
+        console.log("id: "+idProd);
+        console.log(carrito);
+        let indexArr = isInList(idProd); 
+        console.log("indexArr " +indexArr);
+        carrito.splice(indexArr,1);
+    }
+
+  
+
     const clear = () => setCarrtio([]);
-    const isInCart = (idProd) => (carrito.find(idProd))? true:false ;
 
+    function isInList (idProd) {
+        return carrito.findIndex(producto => producto.id === idProd); 
+    }
+  
+    useEffect(() => {
+        let suma = 0;
+        for (var i = 0; i < carrito.length; i++) {
+            suma += (carrito[i].cantidad * carrito[i].precio);
+        }
+        setCompraTotal(suma);
+    }, [carrito])
 
-    const [activeButton, setActive] = useState(false);
-
+    
     return ( 
         <>
-            <CartContext.Provider value={{addItemCart, removeItemCart, removeProduct, clear, isInCart, activeButton}}>
+            <CartContext.Provider value={{carrito, addItemCart, removeProduct, clear, compraTotal, carritoSize:carrito.length}}>
                 {children}
             </CartContext.Provider>
         </>

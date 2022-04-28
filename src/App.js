@@ -9,26 +9,29 @@ import AboutSection from './Components/Pages/AboutSection';
 import Cart from './Components/Cart';
 import NotFound from './Components/Pages/NotFound';
 import ItemDetailContainer from './Components/ItemDetail/ItemDetailContainer';
+//import ProductsContext from './Utils/ProductsContext';
 
 
 function App() {
 
   return (
-    <CartContextProvider className="App">
-      <BrowserRouter>
-        <NavBar />  
-        <div className='sectionContainer'>  
-          <Routes>
-            <Route exact path='/' element={<HomeSection />} />
-            <Route exact path='/about' element={<AboutSection/>} />
-            <Route exact path='/categoria/:idCategory' element={<ItemListContainer/>} />
-            <Route exact path='/producto/:idItem' element={<ItemDetailContainer/>} />
-            <Route exact path='/cart' element={<Cart />} />
-            <Route path="*" element={<NotFound/>} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </CartContextProvider>
+    //<ProductsContext>
+      <CartContextProvider className="App">
+        <BrowserRouter>
+          <NavBar />  
+          <div className='sectionContainer'>  
+            <Routes>
+              <Route exact path='/' element={<HomeSection />} />
+              <Route exact path='/about' element={<AboutSection/>} />
+              <Route exact path='/categoria/:idCategory' element={<ItemListContainer/>} />
+              <Route exact path='/producto/:idItem' element={<ItemDetailContainer/>} />
+              <Route exact path='/cart' element={<Cart />} />
+              <Route path="*" element={<NotFound/>} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </CartContextProvider>
+    //</ProductsContext>
   );
 }
 
