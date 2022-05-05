@@ -1,0 +1,9 @@
+.trashButton{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+.trashIcon{
+    width: 24px;
+}
