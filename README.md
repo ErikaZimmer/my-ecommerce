@@ -2,10 +2,10 @@
 
 Esta pagina se creo especificamente para fines educativos. 
 
-Alumna: Erika Zimmer
-Profesor: Guillermo Jorge Fergnani
-Institucion: CoderHouse
-Comisión: 31140
+- Alumna: Erika Zimmer
+- Profesor: Guillermo Jorge Fergnani
+- Institucion: CoderHouse
+- Comisión: 31140
 
 ## Accedo a la tienda
 
