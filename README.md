@@ -9,7 +9,7 @@ Esta página se creó específicamente para fines educativos.
 
 ![Dulce Delicias](https://user-images.githubusercontent.com/55201104/168959478-391fc1a2-2142-41ae-8bcd-9e881443a96b.gif)
 
-## Accedo a la tienda
+## Acceso a la tienda
 
 URL: https://dulces-delicias-295eb.web.app/
 
