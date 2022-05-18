@@ -32,6 +32,14 @@ WEB: https://www.paulinecafe.com.ar/
 
 ### Modificaciones
 
+Dentro de los puntos requeridos en las clases se hicieron algunas modificaciones: 
+
+- El detalle del carrito se desarrolla en un Offcanvas. El objetivo de esto es que el usuario no tenga que cambiar la visualiazcion de la pagina donde esta para poder ver que productos tiene o no en el carrito. Lo mismo se pendo con la lista de Favoritos.
+- Con respecto al count que se visualiza en el detalle del producto, se removio el seteo del estado a 1 cuando el producto o cantidad se suma al carrito.
+- Se sumo una ruta /admin donde se puede visualizar las oredenes y mensajes que se enviaron a la tienda. 
+
+### Otros
+
 Se acepta feedback y recomendaciones.
 
 En el caso de querer realizar alguna modificacion, seran siempre tenidas en cuentas mientras que los cambios mantengan el estilo y librerias utilizadas hasta el momento. 
