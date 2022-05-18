@@ -11,7 +11,7 @@ Esta página se creó específicamente para fines educativos.
 
 ## Accedo a la tienda
 
-URL: En proceso
+URL: https://dulces-delicias-295eb.web.app/
 
 ### Librerías usadas
 
