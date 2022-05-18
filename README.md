@@ -11,7 +11,7 @@ Esta pagina se creo especificamente para fines educativos.
 
 ## Accedo a la tienda
 
-URL: 
+URL: En proceso
 
 ### Librerias usadas
 
